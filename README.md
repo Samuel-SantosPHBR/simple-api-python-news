@@ -1,2 +1,2 @@
 # simple-api-python-news
-Create a simple api python of news
+This project is only to learning about python and fast api with python.
