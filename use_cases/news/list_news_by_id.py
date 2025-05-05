@@ -5,5 +5,4 @@ class ListNewsById:
     @staticmethod
     def execute(id):
         news = News.get(News.id == id)
-        print(news)
-        return [model_to_dict(news)]
+        return model_to_dict(news)
