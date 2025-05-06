@@ -1,5 +1,5 @@
 from config.api_config import app
-from use_cases.news import create_news_use_case, list_news_use_case, list_news_by_id, update_news_use_case
+from use_cases.news import create_news_use_case, list_news_use_case, list_news_by_id, update_news_use_case, delete_news_use_case
 from pydantic import BaseModel
 
 
@@ -23,3 +23,7 @@ async def root(id):
 @app.patch("/news/{id}")
 async def root(payload: NewsRequestDto, id):
     update_news_use_case.UpdateNewsUseCase.execute(payload, id)
+
+@app.delete("/news/{id}")
+async def root(id):
+    delete_news_use_case.DeleteNewsUseCase.execute(id)
